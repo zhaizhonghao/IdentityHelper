@@ -15,6 +15,7 @@ import (
 	"github.com/docker/docker/api/types"
 	"github.com/docker/docker/client"
 	"github.com/gorilla/mux"
+	"github.com/zhaizhonghao/registrarHelper/services/config"
 	"github.com/zhaizhonghao/registrarHelper/services/dockerCompose"
 )
 
@@ -225,9 +226,12 @@ func enroll(w http.ResponseWriter, r *http.Request) {
 		enrollmentInfo.Address)
 	fmt.Println(enrollmentInfo.Username, "enrolling")
 	//enroll
+	//TODO这里的localhost不应该写死
 	err, wout := runCMD("fabric-ca-client", "enroll",
 		"--url", url,
 		"--caname", enrollmentInfo.CAName,
+		"--csr.hosts", enrollmentInfo.CSRHosts,
+		"--csr.hosts", "localhost",
 		"--csr.names", "C="+enrollmentInfo.Country,
 		"--csr.names", "ST="+enrollmentInfo.State,
 		"--csr.names", "O="+enrollmentInfo.Organization,
@@ -238,31 +242,22 @@ func enroll(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(string(wout.Bytes()))
 		return
 	}
-
+	address := parseAddress(enrollmentInfo.Address)
+	caName := parseCAName(enrollmentInfo.CAName)
 	//补全MSP(在msp中放入config.yaml文件，下面是其内容)
-	content := `NodeOUs:
-	Enable: true
-	ClientOUIdentifier:
-	  Certificate: cacerts/localhost-7054-ca-org1-example-com.pem
-	  OrganizationalUnitIdentifier: client
-	PeerOUIdentifier:
-	  Certificate: cacerts/localhost-7054-ca-org1-example-com.pem
-	  OrganizationalUnitIdentifier: peer
-	AdminOUIdentifier:
-	  Certificate: cacerts/localhost-7054-ca-org1-example-com.pem
-	  OrganizationalUnitIdentifier: admin
-	OrdererOUIdentifier:
-	  Certificate: cacerts/localhost-7054-ca-org1-example-com.pem
-	  OrganizationalUnitIdentifier: orderer
-	`
+	tpl = template.Must(template.ParseGlob("templates/config/*.yaml"))
 	file, err := os.Create(enrollmentInfo.MSPDir + "/config.yaml")
 	if err != nil {
 		fmt.Println("Fail to create config.yaml file!")
 	}
-	_, err = file.WriteString(content)
+	defer file.Close()
+	configInfo := config.ConfigInfo{}
+	configInfo.CertName = address + "-" + caName
+	err = config.GenerateDockerComposeTemplate(configInfo, tpl, file)
 	if err != nil {
-		fmt.Println("fail to write the content to config.yaml")
+		fmt.Println("Fail to generate config.yaml file!", err)
 	}
+
 	success := Success{
 		Payload: "enroll successfully!",
 		Message: "200 OK",
@@ -270,6 +265,14 @@ func enroll(w http.ResponseWriter, r *http.Request) {
 	//返回结果
 	json.NewEncoder(w).Encode(success)
 	return
+}
+
+func parseAddress(address string) string {
+	return strings.Replace(address, ":", "-", -1)
+}
+
+func parseCAName(caName string) string {
+	return strings.Replace(caName, ".", "-", -1)
 }
 
 func enrollForTLS(w http.ResponseWriter, r *http.Request) {
@@ -292,9 +295,12 @@ func enrollForTLS(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Println(enrollmentInfo.Username, "enrolling for tls")
 	//enroll
+	//TODO这里的localhost不应该写死
 	err, wout := runCMD("fabric-ca-client", "enroll",
 		"--url", url,
 		"--caname", enrollmentInfo.CAName,
+		"--csr.hosts", enrollmentInfo.CSRHosts,
+		"--csr.hosts", "localhost",
 		"--csr.names", "C="+enrollmentInfo.Country,
 		"--csr.names", "ST="+enrollmentInfo.State,
 		"--csr.names", "O="+enrollmentInfo.Organization,
@@ -322,7 +328,7 @@ func enrollForTLS(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	//cp ${PWD}/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/keystore/* ${PWD}/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/tlsca.pem
+	//cp ${PWD}/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/keystore/* ${PWD}/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/server.key
 	err, wout = runCMD("/bin/sh", "-c", "cp "+enrollmentInfo.MSPDir+"/keystore/* "+enrollmentInfo.MSPDir+"/server.key")
 	if err != nil {
 		json.NewEncoder(w).Encode(string(wout.Bytes()))
@@ -335,7 +341,13 @@ func enrollForTLS(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(string(wout.Bytes()))
 		return
 	}
-	//cp ${PWD}/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/tlscacerts/* ${PWD}/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp/tlscacerts/server.key
+	//将msp的admincerts补全
+	err, wout = runCMD("mkdir", enrollmentInfo.MSPDir+"/../msp/admincerts")
+	if err != nil {
+		json.NewEncoder(w).Encode(string(wout.Bytes()))
+		return
+	}
+	//cp ${PWD}/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/tlscacerts/* ${PWD}/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp/tlscacerts/tlscacert.pem
 	err, wout = runCMD("/bin/sh", "-c", "cp "+enrollmentInfo.MSPDir+"/tlscacerts/* "+enrollmentInfo.MSPDir+"/../msp/tlscacerts/tlscacert.pem")
 	if err != nil {
 		json.NewEncoder(w).Encode(string(wout.Bytes()))
@@ -343,8 +355,19 @@ func enrollForTLS(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//如果是Admin把组织的msp给补全了
-	if enrollmentInfo.Username == "admin" {
+
+	if strings.Contains(enrollmentInfo.Username, "admin") {
 		//创建msp目录
+		err, wout = runCMD("mkdir", "-p", enrollmentInfo.MSPDir+"/../../../ca")
+		if err != nil {
+			json.NewEncoder(w).Encode(string(wout.Bytes()))
+			return
+		}
+		err, wout = runCMD("mkdir", "-p", enrollmentInfo.MSPDir+"/../../../tlsca")
+		if err != nil {
+			json.NewEncoder(w).Encode(string(wout.Bytes()))
+			return
+		}
 		err, wout = runCMD("mkdir", "-p", enrollmentInfo.MSPDir+"/../../../msp/cacerts")
 		if err != nil {
 			json.NewEncoder(w).Encode(string(wout.Bytes()))
@@ -356,13 +379,23 @@ func enrollForTLS(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		//将admin的msp目录下的cacerts里面文件考到组织msp的目录中
-		err, wout = runCMD("/bin/sh", "-c", "cp "+enrollmentInfo.MSPDir+"/../msp/cacerts/* "+enrollmentInfo.MSPDir+"/../../../msp/cacerts/cacert.pem")
+		err, wout = runCMD("/bin/sh", "-c", "cp "+enrollmentInfo.MSPDir+"/../msp/cacerts/* "+enrollmentInfo.MSPDir+"/../../../msp/cacerts/")
+		if err != nil {
+			json.NewEncoder(w).Encode(string(wout.Bytes()))
+			return
+		}
+		err, wout = runCMD("/bin/sh", "-c", "cp "+enrollmentInfo.MSPDir+"/../msp/cacerts/* "+enrollmentInfo.MSPDir+"/../../../ca/")
 		if err != nil {
 			json.NewEncoder(w).Encode(string(wout.Bytes()))
 			return
 		}
 		//将admin的msp目录下的tlscacerts里面文件考到组织msp的目录中
-		err, wout = runCMD("/bin/sh", "-c", "cp "+enrollmentInfo.MSPDir+"/../msp/tlscacerts/* "+enrollmentInfo.MSPDir+"/../../../msp/tlscacerts/tlscacert.pem")
+		err, wout = runCMD("/bin/sh", "-c", "cp "+enrollmentInfo.MSPDir+"/../msp/tlscacerts/* "+enrollmentInfo.MSPDir+"/../../../msp/tlscacerts/")
+		if err != nil {
+			json.NewEncoder(w).Encode(string(wout.Bytes()))
+			return
+		}
+		err, wout = runCMD("/bin/sh", "-c", "cp "+enrollmentInfo.MSPDir+"/../msp/tlscacerts/* "+enrollmentInfo.MSPDir+"/../../../tlsca/")
 		if err != nil {
 			json.NewEncoder(w).Encode(string(wout.Bytes()))
 			return
@@ -418,7 +451,6 @@ func register(w http.ResponseWriter, r *http.Request) {
 		"--id.type", registerInfo.Type,
 		"--url", url,
 		"--mspdir", registerInfo.MSPDir,
-		"--csr.hosts", registerInfo.CSRHosts,
 		"--tls.certfiles", registerInfo.PathOfCATLSCert)
 	if err != nil {
 		json.NewEncoder(w).Encode(string(wout.Bytes()))
