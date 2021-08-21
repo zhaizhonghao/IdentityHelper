@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "For admin",
+			"name": "For CA admin",
 			"item": [
 				{
 					"name": "org1",
@@ -19,7 +19,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"admin\",\n    \"Password\":\"adminpw\",\n    \"Address\":\"localhost:7054\",\n    \"CAName\":\"ca.org1.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp\",\n    \"CSRHosts\":\"Admin@org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\",\n    \"CommonName\":\"ca.org1.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+									"raw": "{\n    \"Username\":\"admin\",\n    \"Password\":\"adminpw\",\n    \"Address\":\"localhost:7054\",\n    \"CAName\":\"ca.org1.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/org1/admin/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\",\n    \"CommonName\":\"ca.org1.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/enroll",
@@ -31,30 +31,6 @@
 									"path": [
 										"fabricca",
 										"enroll"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "http://localhost:8383/fabricca/enrollForTLS for org1's admin",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"Username\":\"admin\",\n    \"Password\":\"adminpw\",\n    \"Address\":\"localhost:7054\",\n    \"CAName\":\"ca.org1.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/users/Admin@org1.example.com/tls\",\n    \"CSRHosts\":\"Admin@org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\",\n    \"CommonName\":\"ca.org1.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost:8383/fabricca/enrollForTLS",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8383",
-									"path": [
-										"fabricca",
-										"enrollForTLS"
 									]
 								}
 							},
@@ -72,7 +48,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"admin\",\n    \"Password\":\"adminpw\",\n    \"Address\":\"localhost:8054\",\n    \"CAName\":\"ca.org2.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp\",\n    \"CSRHosts\":\"Admin@org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\",\n    \"CommonName\":\"ca.org2.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org2.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+									"raw": "{\n    \"Username\":\"admin\",\n    \"Password\":\"adminpw\",\n    \"Address\":\"localhost:8054\",\n    \"CAName\":\"ca.org2.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/org2/admin/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\",\n    \"CommonName\":\"ca.org2.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org2.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/enroll",
@@ -84,30 +60,6 @@
 									"path": [
 										"fabricca",
 										"enroll"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "http://localhost:8383/fabricca/enrollForTLS for org2's admin",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"Username\":\"admin\",\n    \"Password\":\"adminpw\",\n    \"Address\":\"localhost:8054\",\n    \"CAName\":\"ca.org2.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/users/Admin@org2.example.com/tls\",\n    \"CSRHosts\":\"Admin@org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\",\n    \"CommonName\":\"ca.org2.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org2.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost:8383/fabricca/enrollForTLS",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8383",
-									"path": [
-										"fabricca",
-										"enrollForTLS"
 									]
 								}
 							},
@@ -119,37 +71,13 @@
 					"name": "orderer",
 					"item": [
 						{
-							"name": "http://localhost:8383/fabricca/enrollForTLS for orderer's admin",
-							"request": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"Username\":\"admin\",\n    \"Password\":\"adminpw\",\n    \"Address\":\"localhost:9054\",\n    \"CAName\":\"ca.orderer.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/users/Admin@example.com/tls\",\n    \"CSRHosts\":\"Admin@example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\",\n    \"CommonName\":\"ca.orderer.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
-								},
-								"url": {
-									"raw": "http://localhost:8383/fabricca/enrollForTLS",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"port": "8383",
-									"path": [
-										"fabricca",
-										"enrollForTLS"
-									]
-								}
-							},
-							"response": []
-						},
-						{
 							"name": "http://localhost:8383/fabricca/enroll for orderer's admin",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"admin\",\n    \"Password\":\"adminpw\",\n    \"Address\":\"localhost:9054\",\n    \"CAName\":\"ca.orderer.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/users/Admin@example.com/msp\",\n    \"CSRHosts\":\"Admin@example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\",\n    \"CommonName\":\"ca.orderer.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+									"raw": "{\n    \"Username\":\"admin\",\n    \"Password\":\"adminpw\",\n    \"Address\":\"localhost:9054\",\n    \"CAName\":\"ca.orderer.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/orderer/admin/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\",\n    \"CommonName\":\"ca.orderer.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/enroll",
@@ -161,6 +89,323 @@
 									"path": [
 										"fabricca",
 										"enroll"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "tls",
+					"item": [
+						{
+							"name": "http://localhost:8383/fabricca/enroll for tls admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"admin\",\n    \"Password\":\"adminpw\",\n    \"Address\":\"localhost:6054\",\n    \"CAName\":\"ca.tls.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/tls/admin/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\",\n    \"CommonName\":\"ca.tls.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"tls.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/enroll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"enroll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for org1's peer0 tls",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"peer0-org1\",\n    \"Password\":\"peer0pw\",\n    \"Type\":\"peer\",\n    \"Address\":\"localhost:6054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/tls/admin/msp\",\n    \"CSRHosts\":\"peer0.org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for org2's peer0 tls",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"peer0-org2\",\n    \"Password\":\"peer0pw\",\n    \"Type\":\"peer\",\n    \"Address\":\"localhost:6054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/tls/admin/msp\",\n    \"CSRHosts\":\"peer0.org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for org1's peer1 tls",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"peer1-org1\",\n    \"Password\":\"peer1pw\",\n    \"Type\":\"peer\",\n    \"Address\":\"localhost:6054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/tls/admin/msp\",\n    \"CSRHosts\":\"peer1.org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for org2's peer1 tls",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"peer1-org2\",\n    \"Password\":\"peer1pw\",\n    \"Type\":\"peer\",\n    \"Address\":\"localhost:6054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/tls/admin/msp\",\n    \"CSRHosts\":\"peer1.org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for org1's admin tls",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"admin-org1\",\n    \"Password\":\"adminorg1pw\",\n    \"Type\":\"admin\",\n    \"Address\":\"localhost:6054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/tls/admin/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for org2's admin tls",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"admin-org2\",\n    \"Password\":\"adminorg2pw\",\n    \"Type\":\"admin\",\n    \"Address\":\"localhost:6054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/tls/admin/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for org1's user1 tls",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"user1-org1\",\n    \"Password\":\"user1pw\",\n    \"Type\":\"client\",\n    \"Address\":\"localhost:6054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/tls/admin/msp\",\n    \"CSRHosts\":\"user1.org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for org2's user1 tls",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"user1-org2\",\n    \"Password\":\"user1pw\",\n    \"Type\":\"client\",\n    \"Address\":\"localhost:6054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/tls/admin/msp\",\n    \"CSRHosts\":\"user1.org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for orderer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"orderer\",\n    \"Password\":\"ordererpw\",\n    \"Type\":\"orderer\",\n    \"Address\":\"localhost:6054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/tls/admin/msp\",\n    \"CSRHosts\":\"orderer.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for orderer admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"admin-orderer\",\n    \"Password\":\"adminordererpw\",\n    \"Type\":\"admin\",\n    \"Address\":\"localhost:6054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/tls/admin/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for orderer1",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"orderer2\",\n    \"Password\":\"orderer2pw\",\n    \"Type\":\"orderer\",\n    \"Address\":\"localhost:6054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/tls/admin/msp\",\n    \"CSRHosts\":\"orderer2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for orderer3",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"orderer3\",\n    \"Password\":\"orderer3pw\",\n    \"Type\":\"orderer\",\n    \"Address\":\"localhost:6054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/tls/admin/msp\",\n    \"CSRHosts\":\"orderer3.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
 									]
 								}
 							},
@@ -183,7 +428,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"peer0\",\n    \"Password\":\"peer0pw\",\n    \"Type\":\"peer\",\n    \"Address\":\"localhost:7054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp\",\n    \"CSRHosts\":\"peer0.org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\"\n}"
+									"raw": "{\n    \"Username\":\"peer0\",\n    \"Password\":\"peer0pw\",\n    \"Type\":\"peer\",\n    \"Address\":\"localhost:7054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/org1/admin/msp\",\n    \"CSRHosts\":\"peer0.org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/register",
@@ -207,7 +452,31 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"peer1\",\n    \"Password\":\"peer1pw\",\n    \"Type\":\"peer\",\n    \"Address\":\"localhost:7054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp\",\n    \"CSRHosts\":\"peer1.org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\"\n}"
+									"raw": "{\n    \"Username\":\"peer1\",\n    \"Password\":\"peer1pw\",\n    \"Type\":\"peer\",\n    \"Address\":\"localhost:7054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/org1/admin/msp\",\n    \"CSRHosts\":\"peer1.org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for org1's admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"admin-org1\",\n    \"Password\":\"adminorg1pw\",\n    \"Type\":\"admin\",\n    \"Address\":\"localhost:7054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/org1/admin/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/register",
@@ -231,7 +500,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"peer1\",\n    \"Password\":\"peer1pw\",\n    \"Address\":\"localhost:7054\",\n    \"CAName\":\"ca.org1.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp\",\n    \"CSRHosts\":\"peer1.org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\",\n    \"CommonName\":\"ca.org1.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+									"raw": "{\n    \"Username\":\"peer1\",\n    \"Password\":\"peer1pw\",\n    \"Address\":\"localhost:7054\",\n    \"CAName\":\"ca.org1.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/msp\",\n    \"CSRHosts\":\"peer1.org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\",\n    \"CommonName\":\"peer1.org1.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/enroll",
@@ -273,13 +542,37 @@
 							"response": []
 						},
 						{
+							"name": "http://localhost:8383/fabricca/enroll  for org1's admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"admin-org1\",\n    \"Password\":\"adminorg1pw\",\n    \"Address\":\"localhost:7054\",\n    \"CAName\":\"ca.org1.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\",\n    \"CommonName\":\"Admin@org1.example.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/enroll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"enroll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "http://localhost:8383/fabricca/enrollForTLS for org1's peer1",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"peer1\",\n    \"Password\":\"peer1pw\",\n    \"Address\":\"localhost:7054\",\n    \"CAName\":\"ca.org1.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls\",\n    \"CSRHosts\":\"peer1.org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\",\n    \"CommonName\":\"peer1.org1.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+									"raw": "{\n    \"Username\":\"peer1-org1\",\n    \"Password\":\"peer1pw\",\n    \"Address\":\"localhost:6054\",\n    \"CAName\":\"ca.tls.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls\",\n    \"CSRHosts\":\"peer1.org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\",\n    \"CommonName\":\"peer1.org1.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/enrollForTLS",
@@ -303,7 +596,31 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"peer0\",\n    \"Password\":\"peer0pw\",\n    \"Address\":\"localhost:7054\",\n    \"CAName\":\"ca.org1.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls\",\n    \"CSRHosts\":\"peer0.org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\",\n    \"CommonName\":\"ca.org1.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+									"raw": "{\n    \"Username\":\"peer0-org1\",\n    \"Password\":\"peer0pw\",\n    \"Address\":\"localhost:6054\",\n    \"CAName\":\"ca.tls.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls\",\n    \"CSRHosts\":\"peer0.org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\",\n    \"CommonName\":\"ca.org1.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/enrollForTLS",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"enrollForTLS"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/enrollForTLS for org1's admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"admin-org1\",\n    \"Password\":\"adminorg1pw\",\n    \"Address\":\"localhost:6054\",\n    \"CAName\":\"ca.tls.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/users/Admin@org1.example.com/tls\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\",\n    \"CommonName\":\"Admin@org1.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/enrollForTLS",
@@ -332,7 +649,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"peer0\",\n    \"Password\":\"peer0pw\",\n    \"Type\":\"peer\",\n    \"Address\":\"localhost:8054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp\",\n    \"CSRHosts\":\"peer0.org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\"\n}"
+									"raw": "{\n    \"Username\":\"peer0\",\n    \"Password\":\"peer0pw\",\n    \"Type\":\"peer\",\n    \"Address\":\"localhost:8054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/org2/admin/msp\",\n    \"CSRHosts\":\"peer0.org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/register",
@@ -356,7 +673,31 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"peer1\",\n    \"Password\":\"peer1pw\",\n    \"Type\":\"peer\",\n    \"Address\":\"localhost:8054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp\",\n    \"CSRHosts\":\"peer1.org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\"\n}"
+									"raw": "{\n    \"Username\":\"peer1\",\n    \"Password\":\"peer1pw\",\n    \"Type\":\"peer\",\n    \"Address\":\"localhost:8054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/org2/admin/msp\",\n    \"CSRHosts\":\"peer1.org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/register for org2's admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"admin-org2\",\n    \"Password\":\"adminorg2pw\",\n    \"Type\":\"admin\",\n    \"Address\":\"localhost:8054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/org2/admin/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/register",
@@ -422,13 +763,37 @@
 							"response": []
 						},
 						{
+							"name": "http://localhost:8383/fabricca/enroll  for org2's admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"admin-org2\",\n    \"Password\":\"adminorg2pw\",\n    \"Address\":\"localhost:8054\",\n    \"CAName\":\"ca.org2.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\",\n    \"CommonName\":\"Admin@org2.example.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org2.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/enroll",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"enroll"
+									]
+								}
+							},
+							"response": []
+						},
+						{
 							"name": "http://localhost:8383/fabricca/enrollForTLS for org2's peer1",
 							"request": {
 								"method": "POST",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"peer1\",\n    \"Password\":\"peer1pw\",\n    \"Address\":\"localhost:8054\",\n    \"CAName\":\"ca.org2.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/peers/org2.org1.example.com/tls\",\n    \"CSRHosts\":\"peer1.org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\",\n    \"CommonName\":\"peer1.org2.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org2.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+									"raw": "{\n    \"Username\":\"peer1-org2\",\n    \"Password\":\"peer1pw\",\n    \"Address\":\"localhost:6054\",\n    \"CAName\":\"ca.tls.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls\",\n    \"CSRHosts\":\"peer1.org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\",\n    \"CommonName\":\"peer1.org2.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org2.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/enrollForTLS",
@@ -452,7 +817,31 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"peer0\",\n    \"Password\":\"peer0pw\",\n    \"Address\":\"localhost:8054\",\n    \"CAName\":\"ca.org2.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls\",\n    \"CSRHosts\":\"peer0.org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\",\n    \"CommonName\":\"peer0.org2.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org2.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+									"raw": "{\n    \"Username\":\"peer0-org2\",\n    \"Password\":\"peer0pw\",\n    \"Address\":\"localhost:6054\",\n    \"CAName\":\"ca.tls.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls\",\n    \"CSRHosts\":\"peer0.org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\",\n    \"CommonName\":\"peer0.org2.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org2.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+								},
+								"url": {
+									"raw": "http://localhost:8383/fabricca/enrollForTLS",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8383",
+									"path": [
+										"fabricca",
+										"enrollForTLS"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "http://localhost:8383/fabricca/enrollForTLS for org2's admin",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"Username\":\"admin-org2\",\n    \"Password\":\"adminorg2pw\",\n    \"Address\":\"localhost:6054\",\n    \"CAName\":\"ca.tls.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/users/Admin@org2.example.com/tls\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\",\n    \"CommonName\":\"Admin@org2.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org2.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/enrollForTLS",
@@ -486,7 +875,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"user1\",\n    \"Password\":\"user1pw\",\n    \"Type\":\"client\",\n    \"Address\":\"localhost:7054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp\",\n    \"CSRHosts\":\"User1@org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\"\n}"
+									"raw": "{\n    \"Username\":\"user1\",\n    \"Password\":\"user1pw\",\n    \"Type\":\"client\",\n    \"Address\":\"localhost:7054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/org1/admin/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/register",
@@ -510,7 +899,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"user1\",\n    \"Password\":\"user1pw\",\n    \"Address\":\"localhost:7054\",\n    \"CAName\":\"ca.org1.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp\",\n    \"CSRHosts\":\"User1@org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\",\n    \"CommonName\":\"User1@org1.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+									"raw": "{\n    \"Username\":\"user1\",\n    \"Password\":\"user1pw\",\n    \"Address\":\"localhost:7054\",\n    \"CAName\":\"ca.org1.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\",\n    \"CommonName\":\"User1@org1.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/enroll",
@@ -534,7 +923,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"user1\",\n    \"Password\":\"user1pw\",\n    \"Address\":\"localhost:7054\",\n    \"CAName\":\"ca.org1.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/users/User1@org1.example.com/tls\",\n    \"CSRHosts\":\"User1@org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\",\n    \"CommonName\":\"User1@org1.example.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+									"raw": "{\n    \"Username\":\"user1-org1\",\n    \"Password\":\"user1pw\",\n    \"Address\":\"localhost:6054\",\n    \"CAName\":\"ca.tls.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/users/User1@org1.example.com/tls\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\",\n    \"CommonName\":\"User1@org1.example.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/enrollForTLS",
@@ -563,7 +952,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"user1\",\n    \"Password\":\"user1pw\",\n    \"Type\":\"client\",\n    \"Address\":\"localhost:8054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp\",\n    \"CSRHosts\":\"User1@org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\"\n}"
+									"raw": "{\n    \"Username\":\"user1\",\n    \"Password\":\"user1pw\",\n    \"Type\":\"client\",\n    \"Address\":\"localhost:8054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/org2/admin/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/register",
@@ -587,7 +976,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"user1\",\n    \"Password\":\"user1pw\",\n    \"Address\":\"localhost:7054\",\n    \"CAName\":\"ca.org1.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org1.example.com/users/User1@org1.example.com/msp\",\n    \"CSRHosts\":\"User1@org1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\",\n    \"CommonName\":\"User1@org1.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+									"raw": "{\n    \"Username\":\"user1\",\n    \"Password\":\"user1pw\",\n    \"Address\":\"localhost:7054\",\n    \"CAName\":\"ca.org1.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/users/User1@org2.example.com/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org1/tls-cert.pem\",\n    \"CommonName\":\"User1@org2.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org1.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/enroll",
@@ -611,7 +1000,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"Username\":\"user1\",\n    \"Password\":\"user1pw\",\n    \"Address\":\"localhost:8054\",\n    \"CAName\":\"ca.org2.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/users/User1@org2.example.com/tls\",\n    \"CSRHosts\":\"User1@org2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/org2/tls-cert.pem\",\n    \"CommonName\":\"User1@org2.example.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org2.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+									"raw": "{\n    \"Username\":\"user1-org2\",\n    \"Password\":\"user1pw\",\n    \"Address\":\"localhost:6054\",\n    \"CAName\":\"ca.tls.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/peerOrganizations/org2.example.com/users/User1@org2.example.com/tls\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\",\n    \"CommonName\":\"User1@org2.example.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"org2.example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 								},
 								"url": {
 									"raw": "http://localhost:8383/fabricca/enrollForTLS",
@@ -642,7 +1031,31 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Username\":\"orderer\",\n    \"Password\":\"ordererpw\",\n    \"Type\":\"orderer\",\n    \"Address\":\"localhost:9054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/users/Admin@example.com/msp\",\n    \"CSRHosts\":\"orderer.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\"\n}"
+							"raw": "{\n    \"Username\":\"orderer\",\n    \"Password\":\"ordererpw\",\n    \"Type\":\"orderer\",\n    \"Address\":\"localhost:9054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/orderer/admin/msp\",\n    \"CSRHosts\":\"orderer.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8383/fabricca/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8383",
+							"path": [
+								"fabricca",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8383/fabricca/register for orderer admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Username\":\"admin-orderer\",\n    \"Password\":\"adminordererpw\",\n    \"Type\":\"admin\",\n    \"Address\":\"localhost:9054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/orderer/admin/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8383/fabricca/register",
@@ -666,7 +1079,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Username\":\"orderer2\",\n    \"Password\":\"orderer2pw\",\n    \"Type\":\"orderer\",\n    \"Address\":\"localhost:9054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/users/Admin@example.com/msp\",\n    \"CSRHosts\":\"orderer2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\"\n}"
+							"raw": "{\n    \"Username\":\"orderer2\",\n    \"Password\":\"orderer2pw\",\n    \"Type\":\"orderer\",\n    \"Address\":\"localhost:9054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/orderer/admin/msp\",\n    \"CSRHosts\":\"orderer2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8383/fabricca/register",
@@ -690,7 +1103,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Username\":\"orderer3\",\n    \"Password\":\"orderer3pw\",\n    \"Type\":\"orderer\",\n    \"Address\":\"localhost:9054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/users/Admin@example.com/msp\",\n    \"CSRHosts\":\"orderer3.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\"\n}"
+							"raw": "{\n    \"Username\":\"orderer3\",\n    \"Password\":\"orderer3pw\",\n    \"Type\":\"orderer\",\n    \"Address\":\"localhost:9054\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/cas/orderer/admin/msp\",\n    \"CSRHosts\":\"orderer3.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8383/fabricca/register",
@@ -714,7 +1127,31 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Username\":\"orderer\",\n    \"Password\":\"ordererpw\",\n    \"Address\":\"localhost:9054\",\n    \"CAName\":\"ca.orderer.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer.example.com/msp\",\n    \"CSRHosts\":\"orderer.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\",\n    \"CommonName\":\"orderer.example.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+							"raw": "{\n    \"Username\":\"orderer\",\n    \"Password\":\"ordererpw\",\n    \"Address\":\"localhost:9054\",\n    \"CAName\":\"ca.orderer.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer.example.com/msp\",\n    \"CSRHosts\":\"orderer.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\",\n    \"CommonName\":\"orderer.example.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"Hyperledger\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8383/fabricca/enroll",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8383",
+							"path": [
+								"fabricca",
+								"enroll"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8383/fabricca/enroll  for orderer admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Username\":\"admin-orderer\",\n    \"Password\":\"adminordererpw\",\n    \"Address\":\"localhost:9054\",\n    \"CAName\":\"ca.orderer.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/users/Admin@example.com/msp\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\",\n    \"CommonName\":\"Admin@example.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"Hyperledger\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8383/fabricca/enroll",
@@ -738,7 +1175,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Username\":\"orderer2\",\n    \"Password\":\"orderer2pw\",\n    \"Address\":\"localhost:9054\",\n    \"CAName\":\"ca.orderer.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer2.example.com/msp\",\n    \"CSRHosts\":\"orderer2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\",\n    \"CommonName\":\"orderer2.example.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+							"raw": "{\n    \"Username\":\"orderer2\",\n    \"Password\":\"orderer2pw\",\n    \"Address\":\"localhost:9054\",\n    \"CAName\":\"ca.orderer.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer2.example.com/msp\",\n    \"CSRHosts\":\"orderer2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\",\n    \"CommonName\":\"orderer2.example.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"Hyperledger\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8383/fabricca/enroll",
@@ -762,7 +1199,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Username\":\"orderer2\",\n    \"Password\":\"orderer2pw\",\n    \"Address\":\"localhost:9054\",\n    \"CAName\":\"ca.orderer.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer2.example.com/msp\",\n    \"CSRHosts\":\"orderer2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\",\n    \"CommonName\":\"orderer2.example.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+							"raw": "{\n    \"Username\":\"orderer3\",\n    \"Password\":\"orderer3pw\",\n    \"Address\":\"localhost:9054\",\n    \"CAName\":\"ca.orderer.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer3.example.com/msp\",\n    \"CSRHosts\":\"orderer3.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\",\n    \"CommonName\":\"orderer3.example.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"Hyperledger\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8383/fabricca/enroll",
@@ -786,7 +1223,31 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Username\":\"orderer\",\n    \"Password\":\"ordererpw\",\n    \"Address\":\"localhost:9054\",\n    \"CAName\":\"ca.orderer.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer.example.com/tls\",\n    \"CSRHosts\":\"orderer.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\",\n    \"CommonName\":\"orderer.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+							"raw": "{\n    \"Username\":\"orderer\",\n    \"Password\":\"ordererpw\",\n    \"Address\":\"localhost:6054\",\n    \"CAName\":\"ca.tls.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer.example.com/tls\",\n    \"CSRHosts\":\"orderer.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\",\n    \"CommonName\":\"orderer.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"Hyperledger\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8383/fabricca/enrollForTLS",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8383",
+							"path": [
+								"fabricca",
+								"enrollForTLS"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8383/fabricca/enrollForTLS for orderer admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"Username\":\"admin-orderer\",\n    \"Password\":\"adminordererpw\",\n    \"Address\":\"localhost:6054\",\n    \"CAName\":\"ca.tls.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/users/Admin@example.com/tls\",\n    \"CSRHosts\":\"localhost\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\",\n    \"CommonName\":\"Admin@exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"Hyperledger\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8383/fabricca/enrollForTLS",
@@ -810,7 +1271,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Username\":\"orderer2\",\n    \"Password\":\"orderer2pw\",\n    \"Address\":\"localhost:9054\",\n    \"CAName\":\"ca.orderer.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer2.example.com/tls\",\n    \"CSRHosts\":\"orderer1.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\",\n    \"CommonName\":\"orderer2.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+							"raw": "{\n    \"Username\":\"orderer2\",\n    \"Password\":\"orderer2pw\",\n    \"Address\":\"localhost:6054\",\n    \"CAName\":\"ca.tls.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer2.example.com/tls\",\n    \"CSRHosts\":\"orderer2.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\",\n    \"CommonName\":\"orderer2.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"Hyperledger\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8383/fabricca/enrollForTLS",
@@ -834,7 +1295,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"Username\":\"orderer3\",\n    \"Password\":\"orderer3pw\",\n    \"Address\":\"localhost:9054\",\n    \"CAName\":\"ca.orderer.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer3.example.com/tls\",\n    \"CSRHosts\":\"orderer3.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/orderer/tls-cert.pem\",\n    \"CommonName\":\"orderer3.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"example.com\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
+							"raw": "{\n    \"Username\":\"orderer3\",\n    \"Password\":\"orderer3pw\",\n    \"Address\":\"localhost:6054\",\n    \"CAName\":\"ca.tls.example.com\",\n    \"MSPDir\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/crypto-config-ca/ordererOrganizations/example.com/orderers/orderer3.example.com/tls\",\n    \"CSRHosts\":\"orderer3.example.com\",\n    \"PathOfCATLSCert\":\"/home/zhai/Go_Workstation/github.com/zhaizhonghao/registrarHelper/fabric-ca/tls/tls-cert.pem\",\n    \"CommonName\":\"orderer3.exampel.com\",\n    \"Country\":\"CN\",\n    \"State\":\"Jiangsu\",\n    \"Organization\":\"Hyperledger\",\n    \"OrganizationUnit\":\"Fabric\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8383/fabricca/enrollForTLS",

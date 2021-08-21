@@ -213,12 +213,17 @@ func enroll(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("Options request discard!")
 		return
 	}
+	pwd := os.Getenv("PWD")
+	fmt.Println("current path", pwd)
 	var enrollmentInfo = EnrollmentInfo{}
 	err := json.NewDecoder(r.Body).Decode(&enrollmentInfo)
 	if err != nil {
 		fmt.Println("failed to decode", err)
 		return
 	}
+	//变成绝对路径
+	enrollmentInfo.MSPDir = pwd + enrollmentInfo.MSPDir
+	enrollmentInfo.PathOfCATLSCert = pwd + enrollmentInfo.PathOfCATLSCert
 
 	url := fmt.Sprintf("https://%s:%s@%s",
 		enrollmentInfo.Username,
@@ -281,12 +286,17 @@ func enrollForTLS(w http.ResponseWriter, r *http.Request) {
 		fmt.Println("Options request discard!")
 		return
 	}
+	pwd := os.Getenv("PWD")
+	fmt.Println("current path", pwd)
 	var enrollmentInfo = EnrollmentInfo{}
 	err := json.NewDecoder(r.Body).Decode(&enrollmentInfo)
 	if err != nil {
 		fmt.Println("failed to decode", err)
 		return
 	}
+	//变成绝对路径
+	enrollmentInfo.MSPDir = pwd + enrollmentInfo.MSPDir
+	enrollmentInfo.PathOfCATLSCert = pwd + enrollmentInfo.PathOfCATLSCert
 
 	url := fmt.Sprintf("https://%s:%s@%s",
 		enrollmentInfo.Username,
@@ -430,18 +440,24 @@ type RegisterInfo struct {
 
 //./fabric-ca-client register --id.name org1admin --id.secret org1adminpw --url https://example.com:7054 --mspdir ./org1-ca/msp --id.type admin --tls.certfiles ../tls/tls-ca-cert.pem --csr.hosts 'host1,*.example.com'
 func register(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("registering")
 	setHeader(w)
 	if (*r).Method == "OPTIONS" {
 		fmt.Println("Options request discard!")
 		return
 	}
+	pwd := os.Getenv("PWD")
+	fmt.Println("current path", pwd)
 	var registerInfo = RegisterInfo{}
 	err := json.NewDecoder(r.Body).Decode(&registerInfo)
 	if err != nil {
 		fmt.Println("failed to decode", err)
 		return
 	}
+	//转为绝对路径
+	registerInfo.MSPDir = pwd + registerInfo.MSPDir
+	registerInfo.PathOfCATLSCert = pwd + registerInfo.PathOfCATLSCert
+
+	fmt.Println("registering", registerInfo.Username)
 	url := fmt.Sprintf("https://%s",
 		registerInfo.Address)
 
